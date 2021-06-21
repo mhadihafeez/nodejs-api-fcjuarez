@@ -18,7 +18,7 @@ app.get('/', function (req, res) {
 });
 
 //STAR THE SERVER
-app.listen(3000);
+app.listen(5000);
 
 //THATS HOW TO CALL FROM FRONTEND
 // fetch("http://localhost:3000/tickets/").then(result => {
