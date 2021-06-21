@@ -1,0 +1,28 @@
+const express = require('express');
+require("./config/db");
+const app = express();
+const bodyParser = require('body-parser');
+const cors = require('cors');
+
+//MIDDLEWRES (it is used whenever a route request is made, this fuction will execute. Mainly its used for authetication)
+app.use(cors());
+app.use(bodyParser.json());
+
+//IMPORT ROUTES
+const ticketsRoute = require('./routes/tickets');
+//INCLUDE ROUTES LIKE, USERS, TICKETS ETC
+app.use('/tickets', ticketsRoute);
+
+app.get('/', function (req, res) {
+    res.send("ROOT");
+});
+
+//STAR THE SERVER
+app.listen(3000);
+
+//THATS HOW TO CALL FROM FRONTEND
+// fetch("http://localhost:3000/tickets/").then(result => {
+//     return result.json();
+// }).then(data => {
+//     console.log(data);
+// });
