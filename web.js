@@ -19,7 +19,17 @@ app.get('/', function (req, res) {
 
 //STAR THE SERVER
 // app.listen(5000);
-app.listen(process.env.PORT || 5000)
+
+// const host = 'localhost';
+// const port = 3000;
+
+const host = '0.0.0.0';
+const port = process.env.PORT || 5000;
+
+app.listen(port, host, function () {
+    console.log("Server started.......");
+});
+// app.listen(process.env.PORT || 5000)
 
 //THATS HOW TO CALL FROM FRONTEND
 // fetch("http://localhost:3000/tickets/").then(result => {
